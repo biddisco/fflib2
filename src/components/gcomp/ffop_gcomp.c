@@ -5,7 +5,7 @@
 #include "fflocks.h"
 
 int ffop_gcomp_init(ffop_t * op){
-    return ffop_gcomp_operator_get(op->comp.operator_type, &(op->comp.operator));
+    return ffop_gcomp_operator_get(op->comp.operator_type, &(op->comp.operator_));
 }
 
 
