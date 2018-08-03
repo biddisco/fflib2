@@ -8,7 +8,7 @@ find_package(MPI REQUIRED)
 #--------------------------------------------------
 set(TEST_C_SRCS
   send_recv
-  send_recv_libfabric
+  #send_recv_libfabric
   ping_pong_dep
   #  custom_computation
   ping_pong_schedule
@@ -18,6 +18,7 @@ set(TEST_C_SRCS
   allreduce_buffers_user_managed_inplace
   allreduce_buffers_fflib_managed
   allreduce_buffers_fflib_managed_inplace
+  ping_pong_sched_libfabric
 )
 
 set(TEST_CPP_SRCS
