@@ -63,7 +63,7 @@ set_target_properties(fflib PROPERTIES
     PUBLIC_HEADER src/ff.h)
 configure_file(fflib.pc.in fflib.pc @ONLY)
 target_include_directories(fflib PRIVATE src)
-target_link_libraries(fflib ${MPI_LIBRARIES})
+target_link_libraries(fflib m ${MPI_LIBRARIES})
 
 set(CMAKE_C_FLAGS_DEBUG "-DFFDEBUG -g")
 set(CMAKE_C_FLAGS "-O3 -ftree-vectorize")
