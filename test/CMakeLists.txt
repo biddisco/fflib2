@@ -21,6 +21,12 @@ set(TEST_C_SRCS
   ping_pong_sched_libfabric
 )
 
+if(FFLIB_HAVE_LIBFABRIC) 
+  set(TEST_C_SRCS ${TEST_C_SRCS}
+    ping_pong_sched_libfabric
+  )
+endif()
+
 set(TEST_CPP_SRCS
 )
 
@@ -29,11 +35,13 @@ message("include_directories(${MPI_INCLUDE_PATH})")
 
 foreach(test ${TEST_C_SRCS})
   add_executable(${test} ${test}.c)
+  target_include_directories(${test} PRIVATE ${PROJECT_SOURCE_DIR}/src)
   target_link_libraries(${test} fflib)
 endforeach()
 
 foreach(test ${TEST_CPP_SRCS})
   add_executable(${test} ${test}.cpp)
+  target_include_directories(${test} PRIVATE ${PROJECT_SOURCE_DIR}/src)
   target_link_libraries(${test} fflib)
 endforeach()
 
