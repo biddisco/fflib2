@@ -18,7 +18,6 @@ set(TEST_C_SRCS
   allreduce_buffers_user_managed_inplace
   allreduce_buffers_fflib_managed
   allreduce_buffers_fflib_managed_inplace
-  ping_pong_sched_libfabric
 )
 
 if(FFLIB_HAVE_LIBFABRIC) 
