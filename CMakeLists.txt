@@ -145,7 +145,7 @@ set_target_properties(fflib PROPERTIES
 
 target_include_directories(fflib PRIVATE src)
 
-target_link_libraries(fflib m ${FFLIB_LIBRARY_DEPENDENCIES})
+target_link_libraries(fflib m ${MPI_C_LIBRARIES} ${FFLIB_LIBRARY_DEPENDENCIES})
 
 configure_file(fflib.pc.in fflib.pc @ONLY)
 install(TARGETS fflib
